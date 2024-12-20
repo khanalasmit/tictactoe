@@ -25,23 +25,29 @@ def update_screen(screen,ai_settings,box,circles,crosses,stat):
             cross.blitme()
         if stat.gameover():
             if stat.winner()==1:
-                button=Button(screen,"Side A won")
+                button=Button(screen,"SIDE A WIN")
                 button.button_visible=True
                 button.draw_button()
                 circles.empty()
                 crosses.empty()
                 game.display.flip()
+                stat.signstat=1
+                stat.sideA.clear()
+                stat.sideB.clear()
                 time.sleep(2)
                 stat.board=["-", "-", "-", "-", "-", "-", "-", "-", "-"]
                 button.button_visible=False
                 
             elif stat.winner() ==-1:
-                button=Button(screen,"Side B won")
+                button=Button(screen,"SIBE B WIN")
                 button.button_visible=True
                 button.draw_button()
                 crosses.empty()
                 circles.empty()
                 game.display.flip()
+                stat.signstat=1
+                stat.sideA.clear()
+                stat.sideB.clear()
                 time.sleep(2)
                 stat.board=["-", "-", "-", "-", "-", "-", "-", "-", "-"]
                 button.button_visible=False

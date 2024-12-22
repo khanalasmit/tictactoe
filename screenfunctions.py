@@ -51,6 +51,20 @@ def update_screen(screen,ai_settings,box,circles,crosses,stat):
                 time.sleep(2)
                 stat.board=["-", "-", "-", "-", "-", "-", "-", "-", "-"]
                 button.button_visible=False
+            elif stat.winner() ==0:
+                button=Button(screen,"DRAW")
+                button.button_visible=True
+                button.draw_button()
+                crosses.empty()
+                circles.empty()
+                game.display.flip()
+                stat.signstat=1
+                stat.sideA.clear()
+                stat.sideB.clear()
+                time.sleep(2)
+                stat.board=["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+                button.button_visible=False
+                
                 
             
     game.display.flip()
